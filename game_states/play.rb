@@ -30,11 +30,23 @@ class Play < GameState
       [@knaap, "Arnie heeft een basgitaar gekocht!"],
       [@player, "Een basgitaar? waarom dat opeens?"],
       [@knaap, "KIM DEAL"],
-      [@arnie, "..."]
+      [@arnie, "..."],
+
+      [@player, "Speelde jij geen gitaar vroeger, knaap?"],
+      [@knaap, "Jazeker, in het rampjaar.."],
+      [@player, "Ja ja rampjaar 1992 Arnhem rotjeugd blabla. Ik heb thuis ook nog een gitaar liggen. We gaan een band beginnen!"],
+      [@arnie, "AWESOME!!!"],
+      [@knaap, "Hmmm puik plan. We moeten een naam hebben.."],
+
+      [@knaap, "..."],
+      [@knaap, "Loden plaat die langzaam neerdaalt op mijn ziel?"],
+      [@player, "..."],
+      [@knaap, "De Blauwe Eierkokers?"],
+      [@arnie, "..."],
+      [@knaap, "Het moet iets met leegte zijn, een zwart gat.. Dev/Null..."],
+      [@arnie, "Deåth/Nüll!!!!"]
+
     ]
-
-
-
 
     @index = 0
 
