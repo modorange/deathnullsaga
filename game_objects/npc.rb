@@ -11,7 +11,6 @@ class NPC < Chingu::GameObject
     @frame_name = :up
 
     @font = Gosu::Font.new($window, "Courier", 18)
-
     @string
 
   end
@@ -46,7 +45,6 @@ class NPC < Chingu::GameObject
     super
     @font.draw(@string, @x - 20, @y - 40, 1.0, 1.0, 1.0)
   end
-
 
   def update
     @image = @animation[@frame_name].next

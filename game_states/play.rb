@@ -4,16 +4,37 @@ class Play < GameState
 
     @player = Player.create(x: 200, y: 200, image: 'tnuz_48x64.png')
 
-    #@arnie = NPC.create(x: 254, y: 100, image: 'arnie_48x64.png')
-    #@knaap = NPC.create(x: 324, y: 100, image: 'knaap_48x64.png')
+    @arnie = NPC.create(x: 254, y: 100, image: 'arnie_48x64.png')
+    @knaap = NPC.create(x: 324, y: 100, image: 'knaap_48x64.png')
 
+    @font = Gosu::Font.new($window, "Courier", 18)
 
-    #@arnie.say "This should be <c=ffff00>yellow</c>"
+    @string
 
     @script = [
-      {@arnie => "Lalala"},
-      {@knaap => "Muh"}
+
+      
+      [@player, "He knapen, alles goed?"],
+      
+      [@knaap, "Het gaat slecht, maar verder gaat het goed"],
+      [@arnie, "Kun je niet ergens anders gaan zitten? Je bent zeiknat!"],
+
+
+      [@player, "Ja. Omdat het in HAARLEM ALTIJD REGENT!!!"],
+      [@arnie, "Het regent altijd alleen maar als jij er bent..."],
+      [@knaap, "In het Hearlemfe stellen we prijs op onze rust. Heel anders dan die Lugubere Feesttent waar jij vandaan komt!"],
+      [@knaap, "Maar weet je waar het helemaal gedaan is met de rust? In Schoten!"],
+
+
+      [@player, "Hoezo dat dan?"],
+      [@knaap, "Arnie heeft een basgitaar gekocht!"],
+      [@player, "Een basgitaar? waarom dat opeens?"],
+      [@knaap, "KIM DEAL"],
+      [@arnie, "..."]
     ]
+
+
+
 
     @index = 0
 
@@ -22,15 +43,18 @@ class Play < GameState
                       [:holding_w, :holding_up, :holding_pad_up] => :move_up, 
                       [:holding_s, :holding_down, :holding_pad_down] => :move_down
                     }
-    #self.input = {holding_r: :say_next}
+    self.input = {r: :say_next}
   end
 
   def say_next
     @arnie.say ''
     @knaap.say ''
+    @player.say ''
 
-    @script[@index].keys.first.say @script[@index].values.first
-    @index += 1
+    unless @script[@index].nil?
+      @script[@index].first.say @script[@index][1]
+      @index += 1
+    end
     
   end
 
