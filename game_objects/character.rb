@@ -51,7 +51,7 @@ class Character < Chingu::GameObject
 
   def update
     if @x == @last_x and @y == @last_y
-      @image = @animation[@frame_name].first
+      @image = @animation[@frame_name][1]
     else
       @image = @animation[@frame_name].next
     end
