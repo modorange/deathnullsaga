@@ -1,15 +1,6 @@
-class Player < Chingu::GameObject
+class Player < Character
   def initialize(options = {})
     super
-
-    @animation = Chingu::Animation.new(:file => "tnuz_48x64.png")
-    @animation.frame_names = {:up => 0..2, :down => 6..8, :right => 3..5, :left => 9..11 }
-    
-    @frame_name = :up
-
-    @font = Gosu::Font.new($window, "Courier", 18)
-    @string
-
   end
   
   def move_left

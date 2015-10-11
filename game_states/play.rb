@@ -2,10 +2,10 @@ class Play < GameState
   def initialize
     super
 
-    @player = Player.create(x: 200, y: 200, image: 'tnuz_48x64.png')
+    @player = Character.create(x: 200, y: 200, image: 'tnuz_48x64.png')
 
-    @arnie = NPC.create(x: 254, y: 100, image: 'arnie_48x64.png')
-    @knaap = NPC.create(x: 324, y: 100, image: 'knaap_48x64.png')
+    @arnie = Character.create(x: 254, y: 100, image: 'arnie_48x64.png')
+    @knaap = Character.create(x: 324, y: 100, image: 'knaap_48x64.png')
 
     @font = Gosu::Font.new($window, "Courier", 18)
 
@@ -17,13 +17,13 @@ class Play < GameState
       [@player, "He knapen, alles goed?"],
       
       [@knaap, "Het gaat slecht, maar verder gaat het goed"],
-      [@arnie, "Kun je niet ergens anders gaan zitten? Je bent zeiknat!"],
+      [@arnie, "Kun je niet ergens anders gaan zitten?\n Je bent zeiknat!"],
 
 
       [@player, "Ja. Omdat het in HAARLEM ALTIJD REGENT!!!"],
       [@arnie, "Het regent altijd alleen maar als jij er bent..."],
-      [@knaap, "In het Hearlemfe stellen we prijs op onze rust. Heel anders dan die Lugubere Feesttent waar jij vandaan komt!"],
-      [@knaap, "Maar weet je waar het helemaal gedaan is met de rust? In Schoten!"],
+      [@knaap, "In het Hearlemfe stellen we prijs op onze rust.\n Heel anders dan die Lugubere Feesttent\n waar jij vandaan komt!"],
+      [@knaap, "Maar weet je waar het helemaal gedaan is met de rust?\n In Schoten!"],
 
 
       [@player, "Hoezo dat dan?"],
@@ -34,7 +34,7 @@ class Play < GameState
 
       [@player, "Speelde jij geen gitaar vroeger, knaap?"],
       [@knaap, "Jazeker, in het rampjaar.."],
-      [@player, "Ja ja rampjaar 1992 Arnhem rotjeugd blabla. Ik heb thuis ook nog een gitaar liggen. We gaan een band beginnen!"],
+      [@player, "Ja ja rampjaar 1992 Arnhem rotjeugd blabla.\n Ik heb thuis ook nog een gitaar liggen.\n We gaan een band beginnen!"],
       [@arnie, "AWESOME!!!"],
       [@knaap, "Hmmm puik plan. We moeten een naam hebben.."],
 
@@ -43,8 +43,8 @@ class Play < GameState
       [@player, "..."],
       [@knaap, "De Blauwe Eierkokers?"],
       [@arnie, "..."],
-      [@knaap, "Het moet iets met leegte zijn, een zwart gat.. Dev/Null..."],
-      [@arnie, "Deåth/Nüll!!!!"]
+      [@knaap, "Het moet iets met leegte zijn,\n een zwart gat.. Dev/Null..."],
+      [[@arnie, @player], "Deåth/Nüll!!!!"]
 
     ]
 
@@ -64,7 +64,15 @@ class Play < GameState
     @player.say ''
 
     unless @script[@index].nil?
-      @script[@index].first.say @script[@index][1]
+
+      actors = @script[@index].first
+        if actors.is_a? Array
+          actors.each do |actor|
+            actor.say @script[@index][1]
+          end
+        else
+          actors.say @script[@index][1]
+        end
       @index += 1
     end
     

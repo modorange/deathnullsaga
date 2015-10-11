@@ -1,17 +1,14 @@
-class NPC < Chingu::GameObject
+class Character < Chingu::GameObject
   def initialize(options = {})
     super
 
-    puts options
-    #@animation = Chingu::Animation.new(:file => "knaap_48x64.png")
     @animation = Chingu::Animation.new(:file => options[:image])
-    #@animation = Chingu::Animation.new(:file => "tnuz_48x64.png")
-    @animation.frame_names = {:up => 0..2, :down => 6..8, :right => 3..5, :left => 9..11 }
+    @animation.frame_names = {:up => 0..2, :down => 6..8, :right => 3..5, :left => 9..11}
     
     @frame_name = :up
 
     @font = Gosu::Font.new($window, "Courier", 18)
-    @string
+    @string = ""
 
   end
   
@@ -43,11 +40,24 @@ class NPC < Chingu::GameObject
 
   def draw
     super
-    @font.draw(@string, @x - 20, @y - 40, 1.0, 1.0, 1.0)
+    lines = @string.split("\n ")
+
+    y = @y - 40 - (18 * lines.count)
+
+    lines.each_with_index do |line, index|
+      @font.draw(line, @x - 20, y + (18 * index), 1.0, 1.0, 1.0)
+    end
   end
 
   def update
-    @image = @animation[@frame_name].next
+    if @x == @last_x and @y == @last_y
+      @image = @animation[@frame_name].first
+    else
+      @image = @animation[@frame_name].next
+    end
+
+    @last_x, @last_y = @x, @y
+
   end
 
 end
