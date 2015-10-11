@@ -39,6 +39,8 @@ class Character < Chingu::GameObject
   end
 
   def draw
+    super
+    
     if @string.length > 0
       lines = "#{@string}\n    /".split("\n ")
       y = @y - 10 - (18 * lines.count)
@@ -46,7 +48,6 @@ class Character < Chingu::GameObject
         @font.draw(line, @x - 10, y + (18 * index), 1.0, 1.0, 1.0)
       end
     end
-    super
   end
 
   def update

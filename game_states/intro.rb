@@ -1,10 +1,8 @@
 class Intro < GameState
   def initialize
     super
-    Sound["baal.wav"].play
-
-    # @music = Gosu::Song.new(self, "media/music/baal.mp3")
-    # @music.play
+    @music = Gosu::Song.new("media/baal.wav")
+    @music.play
     self.input = {:return => Play}
   end
   def draw
