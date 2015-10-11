@@ -39,14 +39,14 @@ class Character < Chingu::GameObject
   end
 
   def draw
-    super
-    lines = @string.split("\n ")
-
-    y = @y - 40 - (18 * lines.count)
-
-    lines.each_with_index do |line, index|
-      @font.draw(line, @x - 20, y + (18 * index), 1.0, 1.0, 1.0)
+    if @string.length > 0
+      lines = "#{@string}\n    /".split("\n ")
+      y = @y - 10 - (18 * lines.count)
+      lines.each_with_index do |line, index|
+        @font.draw(line, @x - 10, y + (18 * index), 1.0, 1.0, 1.0)
+      end
     end
+    super
   end
 
   def update
