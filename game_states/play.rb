@@ -2,6 +2,9 @@ class Play < GameState
   def initialize
     super
 
+    @music = Gosu::Song.new("media/music/kostverloren.ogg")
+    @music.play
+
     @player = Character.create(x: 200, y: 200, image: 'tnuz_48x64.png')
 
     @arnie = Character.create(x: 254, y: 100, image: 'arnie_48x64.png')

@@ -7,7 +7,7 @@ require_rel 'game_objects/*'
 
 class Game < Window
   def initialize
-    super(800, 600)
+    super(800, 600, full_sreen: true)
     self.caption = "Deåth/Nüll Saga 死ゼロの伝説 Shi zero no densetsu"
     self.input = {:escape => :exit}
     push_game_state(Intro)
