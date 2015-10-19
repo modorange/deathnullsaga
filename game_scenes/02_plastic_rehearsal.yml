@@ -1,0 +1,34 @@
+music: kostverloren
+map: 
+  image: arnie
+  x: 0
+  y: 0
+characters:
+  tnuz:
+    x: 325
+    y: 320
+    d: up
+  arnie:
+    x: 250
+    y: 220
+    d: down
+  knaap:
+    x: 400
+    y: 220
+    d: down
+  buur:
+    x: 600
+    y: 220
+    d: right
+dialog:
+  - tnuz: "OK Knapen,\n ik heb een ge-ni-aal nummer geschreven,\n het heet Einz."
+  - knaap: "Geschreven?\n Ik dacht dat je het had gejat van\n Omega Massif."
+  - tnuz: "Over Omega Massif wordt niet gesproken!\n Laten we het even doornemen..."
+  - tnuz: "[Je hebt 'Einz' gerepeteerd. +x]"
+  - arnie: "Wat is dat voor rode vlek op je gitaar?\n AWESOME!"
+  - tnuz: "De eerste sessie en we hebben al bloed op de gitaar!\n Ik ga dit even vastleggen voor het nageslacht!"
+  - tnuz: "[bonk bonk]"
+  - arnie: "[arnie loopt weg, komt terug met buurman]"
+  - buur: "Ik kom even melden dat jullie\n per direct gaan kappen met deze kakafonie!"
+  - arnie: "Wat is dat voor onzin!\n Ik lig elke nacht wakker van de ruzies tussen jou en je vrouw\n maar ik mag overdag niet een beetje musiceren?"
+  - buur: "Musiceren is een ding maar dit slaat alles.\n Jullie kunnen nog geen instrument vasthouden\n zonder je handen open te halen. En hou mijn vrouw er even buiten wil je!"

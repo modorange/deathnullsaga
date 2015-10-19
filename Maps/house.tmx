@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="ST-Room-I01" tilewidth="32" tileheight="32" tilecount="280">
+  <image source="../Tilesets/Quartos/ST-Room-I01.png" width="256" height="1120"/>
+ </tileset>
+ <tileset firstgid="281" name="ST-Convi-E01" tilewidth="32" tileheight="32" tilecount="400">
+  <image source="../Tilesets/Loja/ST-Convi-E01.png" width="256" height="1600"/>
+ </tileset>
+ <layer name="Floor" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt0UENwDAMALGExvgDHYJpv+oq+WEE3pnZw57ly+kLHz5u4qPFR4uPFh8tPlp8tPho8dHio8VHi48WHy0+Wny0+GjxAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/XoJZ5ug=
+  </data>
+ </layer>
+ <layer name="Walls" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt1ztOw0AUhlHbOzA0BCpge0BFUgFr4dHwaFgi03FHQsqVR3FG4hzpq6KxIv+SZc/DMJyomzalc3XTZelK3XRsz+Ox/wHRuz2a3JRuQ3eN17NHm/vSNrRrvJ492jyUHkNP4bd5+H1vO01ezx6HE9+dL5Jn7HE48d35OnnGHrX4jPmr7HNnKXvU9n2fZ587S9mjtu/7PPvcWcoefbFHX+zRF3vUzqb1i+xRm6f1i+xR20zrF9mjL/boiz36Yo/a65jrLdy3l+SZTPaofY65vsJ9+0ieyfRtDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/oEfITZmcA==
+  </data>
+ </layer>
+ <layer name="Ceiling" width="100" height="100">
+  <data encoding="base64" compression="zlib">
+   eJzt2T9PFEEcxvGlN1TE9yLQIDYa3oMlJe8BqZQKrZBoAkaoICFqCAXSAJcY72hQGv40CCT47x3wEHaTydzM3Gz2brPJfD/Jk8HZvVsyP2/nfuzIUBb0oMdx87yHVkY8r/XN435tZjW+UOaM+Wf5WNTjqXHskTKa/zymjGdx9fiq7Gbueuxpbl85UFoJ1+tubV5qfKXM53PPjbGox6LyTVlSJpTH+TmTypMsXI/9/NwDpZW56/Fdc22loxwmXo8Fja+VN/nctDEW9VhWVpQPnvcJ1aOdn9NRDjN3PY4090P5qRwnXg/bjDEOav/4Yh070b9PlTPlnHp41bWfX2jul3KpXCVej02Nb7P7vcHmqsdUPm5b55Wtx45x/Ld+/qP8Vf4lXg9zb/hsHY/9fJS9Jtz6db8yrVW8ZsoGUY+Ya9543ncr8VoND/VOv4X+D+wmXg/TdU3Xib1fpd6z/6/pOrH1oGevR2w96NnrEVsPevZ6uP5ecsf+bkXPXg/f58P+bpV6z148ywjNm88+yr62QD8Yp3iWEZo3n32UfW0hVI93OvaeemWfGrIGH/V7rDbkd2ki3981qtgJvOe6jm1QD6fiM+P6LmRy9dGuNXfVNvUe3KXqmlTpo+nBu4XWJGZ/rdJH04N3C61JzP5apY+mB+8WWpOY/bVKH00P3s1ek7L7SaiP7nW/S70Hd7HXpJ97rO9+l/pzwDL6ucf67nc8B4zHHtss7LHNwh4LAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAVNwCyBC8GQ==
+  </data>
+ </layer>
+</map>

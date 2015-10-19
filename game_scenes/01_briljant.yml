@@ -1,0 +1,44 @@
+music: kostverloren
+map: 
+  image: briljant
+  x: -400
+  y: -100
+player:
+  tnuz:
+    x: 200
+    y: 200
+    d: left
+characters:
+  arnie:
+    x: 254
+    y: 100
+    d: up
+  knaap:
+    x: 324
+    y: 100
+    d: up
+dialog:
+  - player: "He knapen, alles goed?"
+  - knaap: "Het gaat slecht, maar verder gaat het goed"  
+  - arnie: "Kun je niet ergens anders gaan zitten?\n Je bent zeiknat!"  
+  - player: "Ja. Omdat het in HAARLEM ALTIJD REGENT!!!"
+  - arnie: "Het regent altijd alleen maar als jij er bent..."
+  - knaap: "In het Hearlemfe stellen we prijs op onze rust.\n Heel anders dan die Lugubere Feesttent\n waar jij vandaan komt!"
+  - knaap: "Maar weet je waar het helemaal gedaan is met de rust?\n In Schoten!"  
+  - player: "Hoezo dat dan?"
+  - knaap: "Arnie heeft een basgitaar gekocht!"  
+  - player: "Een basgitaar? waarom dat opeens?"
+  - knaap: "KIM DEAL"
+  - arnie: "..."  
+  - player: "Speelde jij geen gitaar vroeger, knaap?"
+  - knaap: "Jazeker, in het rampjaar.."
+  - player: "Ja ja rampjaar 1992 Arnhem rotjeugd blabla.\n Ik heb thuis ook nog een gitaar liggen.\n We gaan een band beginnen!"
+  - arnie: "AWESOME!!!"
+  - knaap: "Hmmm puik plan. We moeten een naam hebben.."  
+  - knaap: "..."
+  - knaap: "Loden plaat die langzaam neerdaalt op mijn ziel?"
+  - player: "..."  
+  - knaap: "De Blauwe Eierkokers?"
+  - arnie: "..."
+  - knaap: "Het moet iets met leegte zijn,\n een zwart gat.. Dev/Null..."
+  - arnie: "Deåth/Nüll!!!!"
