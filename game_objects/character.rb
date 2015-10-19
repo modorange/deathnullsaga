@@ -1,4 +1,7 @@
 class Character < Chingu::GameObject
+  
+  attr_accessor :screen_x, :screen_y
+
   def initialize(options = {})
     super
 
@@ -10,25 +13,26 @@ class Character < Chingu::GameObject
     @font = Gosu::Font.new($window, "Courier", 18)
     @string = ""
 
+    @screen_x = @screen_y = 0
   end
-  
+
   def move_left
-    @x -= 2
+    @screen_x -= 2
     @frame_name = :left
   end
   def move_right
-   @x += 2
+   @screen_x += 2
   @frame_name = :right
   end
   def move_up
-    @y -= 2
+    @screen_y -= 2
     @frame_name = :up
   end
 
   def move_down
-    @y += 2
+    @screen_y += 2
     @frame_name = :down
-  end
+  end 
 
   def say_next
     @string = "next"
@@ -36,6 +40,10 @@ class Character < Chingu::GameObject
 
   def say(string)
     @string = string
+  end
+
+  def face(direction)
+    @frame_name = direction.to_sym
   end
 
   def draw
@@ -51,13 +59,13 @@ class Character < Chingu::GameObject
   end
 
   def update
-    if @x == @last_x and @y == @last_y
+    if @screen_x == @last_x and @screen_y == @last_y
       @image = @animation[@frame_name][1]
     else
       @image = @animation[@frame_name].next
     end
 
-    @last_x, @last_y = @x, @y
+    @last_x, @last_y = @screen_x, @screen_y
 
   end
 

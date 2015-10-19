@@ -8,7 +8,8 @@ class Intro < GameState
 
   def start
     @music.stop
-    $window.push_game_state(Play)
+    #$window.push_game_state(Briljant)
+    $window.push_game_state(TileMap)
   end
 
   def draw
