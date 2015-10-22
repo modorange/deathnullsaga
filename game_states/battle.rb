@@ -4,10 +4,11 @@ class Battle < GameState
 
     Chingu::Text.trait :asynchronous
 
+    @camera = Sprite.create
 
     @music = Gosu::Song.new("media/music/kostverloren.ogg")
     @music.play
-    self.input = {:return => :attack}
+    self.input = {:return => :attack, [:left, :down] => :next_target, [:right, :up] => :previous_target}
 
     @tnuz = BattleCharacter.create(x: 100, y: 480, d: 'right', image: "tnuz_48x64.png")
     @arnie = BattleCharacter.create(x: 50, y: 520, d: 'right', image: "arnie_48x64.png")
@@ -22,11 +23,48 @@ class Battle < GameState
     @players = [@tnuz, @arnie, @knaap]
     @enemies = [@buuf, @buur, @buuf2]
 
+    @zoom = 2
+    @attacker = @tnuz
+    @target = @enemies.first
+    @target_index = 0
+
+    @pointer = Sprite.create(image: 'arrow_down.png')
+
+  end
+
+  def next_target
+    @target_index += 1
+    if @target_index >= @enemies.count
+      @target_index = 0
+    end
+
+    @target = @enemies[@target_index]
+
+    @pointer.x = @target.x
+    @pointer.y = @target.y - 30
+  end
+
+  def previous_target
+    @target_index -= 1
+    if @target_index < 0
+      @target_index = @enemies.count - 1
+    end
+    @target = @enemies[@target_index]
+
+    @pointer.x = @target.x
+    @pointer.y = @target.y - 30
   end
 
   def attack
-    @players.sample.attack(@enemies.sample)
 
+    @camera.async do |q|
+      q.tween(1000,:scale => 1.5)
+      q.wait 500
+      q.tween(1000,:scale => 1)
+    end
+
+    @attacker = @players.sample
+    @attacker.attack(@target)
   end
 
   def run
@@ -34,7 +72,10 @@ class Battle < GameState
   end
 
   def draw
-    super
-    Image["battle.png"].draw(0, 0, 0)
+    scale(@camera.scale, @camera.scale, @attacker.x + 50, @attacker.y - 50) do
+      super
+      Image["battle.png"].draw(0, 0, 0)
+    end
   end
+
 end

@@ -16,9 +16,9 @@ class BattleCharacter < Character
 		@target = target
 
     self.async do |q|
-      q.tween(1000, x: target.x - 50, y: target.y)
+      q.tween(1000, x: target.x - 40, y: target.y)
       q.call :hit
-      q.wait 400
+      q.wait 800
       q.tween(1000, x: @startx, y: @starty)
       q.call :done
     end
@@ -30,20 +30,33 @@ class BattleCharacter < Character
 
 	def hit
 
- 		text = Chingu::Text.create("-10hp", :x => @target.x - 10, :y => @target.y - 50)
-    
-    # Now, make that text object fade out and disappear asynchronously.
-    text.async do |q|
-      q.tween(1500, :alpha => 0, :scale => 3)
+    weapon = Sprite.create(image: 'guitar.png', x: @x + 15, y: @y - 5, angle: 280)
+    weapon.factor_x = -1
+
+ 		text = Chingu::Text.create("-10hp", x: @target.x - 10, y: @target.y - 50)
+
+    weapon.async do |q|
+      q.wait 200
+      q.tween(100, angle: 360)
+      q.tween(200, angle: 280)
+      q.tween(100, angle: 360)
       q.call :destroy
     end
 
     starty = @target.y
 
     @target.async do |q|
+      q.wait 1000
       q.tween(100, y: starty + 10, angle: 10)
       q.tween(100, y: starty, angle: 0)
     end
+
+    text.async do |q|
+      q.wait 1000
+      q.tween(1500, :alpha => 0, :scale => 3)
+      q.call :destroy
+    end
+
 	end
 
   def update
@@ -54,5 +67,7 @@ class BattleCharacter < Character
     end
     @last_x, @last_y = @x, @y
   end
+
+
 
 end
