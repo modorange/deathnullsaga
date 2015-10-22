@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'chingu'
 require 'gosu'
 require 'gosu_tiled'

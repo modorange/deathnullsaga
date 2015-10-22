@@ -1,0 +1,24 @@
+GIT
+  remote: git://github.com/ippa/chingu.git
+  revision: d3ed0ff0e0fa81ebc416014095d4ae9b139c785c
+  specs:
+    chingu (0.9rc9)
+      gosu (>= 0.7.45)
+      gosu (>= 0.7.45)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gosu (0.10.4)
+    gosu_tiled (0.1.1)
+      gosu
+      json
+    json (1.8.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chingu!
+  gosu
+  gosu_tiled

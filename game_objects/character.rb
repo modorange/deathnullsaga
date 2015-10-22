@@ -1,5 +1,7 @@
 class Character < Chingu::GameObject
   
+  traits :asynchronous, :velocity
+
   attr_accessor :screen_x, :screen_y
 
   def initialize(options = {})
@@ -8,7 +10,11 @@ class Character < Chingu::GameObject
     @animation = Chingu::Animation.new(:file => options[:image])
     @animation.frame_names = {:up => 0..2, :down => 6..8, :right => 3..5, :left => 9..11}
     
-    @frame_name = :up
+    if options[:d]
+      self.face(options[:d])
+    else
+      self.face('up')
+    end
 
     @font = Gosu::Font.new($window, "Courier", 18)
     @string = ""
@@ -64,9 +70,7 @@ class Character < Chingu::GameObject
     else
       @image = @animation[@frame_name].next
     end
-
     @last_x, @last_y = @screen_x, @screen_y
-
   end
 
 end
